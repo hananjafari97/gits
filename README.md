@@ -1,103 +1,127 @@
 # Git
 
-
-
-## دستورات پایه
+## Basic commands
 <div style="background:#f6f8fa;padding:12px;border-radius:8px;">
 
-- تنظیم نام و ایمیل:
+- Set name and email:
 
 ```bash
-git config --global user.name "نام شما"
+git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 ```
+Set your global Git username.
+Set your global Git email.
 
-- شروع یک مخزن جدید یا کلون کردن:
+- Initialize a new repository or clone an existing one:
 
 ```bash
 git init
 git clone <repo-url>
 ```
+Create a new local Git repository.
+Copy a remote repository to your machine.
 
-- وضعیت و آماده‌سازی برای کامیت:
+- Check status and prepare commits:
 
 ```bash
 git status
 git add <file>
 git add .
-git commit -m "پیام کامیت"
+git commit -m "commit message"
 ```
+Show the current status of the working directory and staging area.
+Stage a specific file for commit.
+Stage all changes in the working directory.
+Create a commit with the provided message.
 
 </div>
 
-## شاخه‌ها و ادغام
+## Branches and merging
 
-
-- ایجاد و تعویض شاخه‌ها:
+- Create and switch branches:
 
 ```bash
 git branch new-feature
 git checkout new-feature
-# یا از نسخهٔ مدرن:
+# or the modern command:
 git switch new-feature
 ```
+Create a new branch named `new-feature`.
+Switch to the `new-feature` branch.
+Switch to the `new-feature` branch using the newer command.
 
-- ایجاد و رفتن به شاخهٔ جدید در یک خط:
+- Create and switch to a new branch in one line:
 
 ```bash
 git checkout -b fix/typo
 ```
+Create a new branch `fix/typo` and switch to it immediately.
 
-- ادغام (merge) و بازپایه‌گذاری (rebase):
+- Merge and rebase:
 
 ```bash
 git checkout main
 git merge new-feature
-# یا برای تاریخچه تمیزتر:
+# or for a cleaner history:
 git rebase main
 ```
+Switch to the `main` branch.
+Merge the `new-feature` branch into `main`.
+Reapply commits on top of `main` for a linear history.
 
+## Working with remotes
 
-## کار با راه‌دور (remote)
-- افزودن ریموت:
+- Add a remote:
 
 ```bash
 git remote add origin <url>
 ```
+Add a new remote named `origin` that points to the given URL.
 
-- دریافت و ادغام تغییرات:
+- Fetch and integrate changes:
 
 ```bash
 git fetch
 git pull
 ```
+Download changes from the remote without merging.
+Fetch and merge remote changes into the current branch.
 
-- ارسال تغییرات:
+- Push changes:
 
 ```bash
 git push -u origin <branch>
 ```
+Upload local commits to the remote `origin` and set upstream tracking for the branch.
 
-## بازگردانی، استش، و تمیزکاری
-- بازگردانی فایل به HEAD:
+## Restore, stash, and cleanup
+
+- Restore a file to the state at HEAD:
 
 ```bash
 git restore <file>
 ```
+Restore the specified file to the version in HEAD.
 
-- ذخیرهٔ موقت تغییرات:
+- Temporarily save changes:
 
 ```bash
 git stash
-# مشاهده
+# view stashes
 git stash list
-# اعمال و حذف
+# apply and remove the latest stash
 git stash pop
 ```
+Save local changes temporarily and clean the working directory.
+List all saved stashes.
+Apply the most recent stash and remove it from the stash list.
 
-- حذف فایل‌های untracked (ابتدا پیش‌نمایش):
+- Remove untracked files (preview first):
 
 ```bash
 git clean -n
 git clean -f
 ```
+Show which untracked files would be removed without deleting them.
+Remove untracked files from the working directory.
+
