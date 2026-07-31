@@ -1,4 +1,4 @@
-# Git
+# Git 🤩
 
 ## Basic commands
 <div style="background:#f6f8fa;padding:12px;border-radius:8px;">
